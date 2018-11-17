@@ -23,7 +23,7 @@ EXPOSE 8080
 RUN apt-get -y update && apt-get install -y maven git
 
 # Cloning Java application from github
-RUN git clone https://github.com/arjunyadav123/registration-login-java-xml-maven-jsp-mysql.git /tmp/project
+RUN git clone https://github.com/adarshnagaraj22/Java-Mysql-Simple-Login-Web-application.git /tmp/project
 
 # Working directory for packaging Java application
 WORKDIR /tmp/project
