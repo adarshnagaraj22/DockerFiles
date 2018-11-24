@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 MAINTAINER Adarsh Nagaraj <adarshgowda4@gmail.com>
 
-# Updating and Installing Java openjdk, wget and curl packages
-RUN apt-get -y update && apt-get install -y curl wget openjdk-8-jdk
+# Updating and Installing Java openjdk, wget, curl, maven and git packages
+RUN apt-get -y update && apt-get install -y curl wget openjdk-8-jdk maven git
 
 # Create directory for Tomcat Installation
 RUN mkdir /usr/local/tomcat
@@ -18,9 +18,6 @@ RUN cp -Rv /tmp/apache-tomcat-8.0.53/* /usr/local/tomcat/
 
 # Exposing port 8080 of the tomcat container
 EXPOSE 8080
-
-# Updating and Installing Maven and git for building java application
-RUN apt-get -y update && apt-get install -y maven git
 
 # Cloning Java application from github
 RUN git clone https://github.com/adarshnagaraj22/Java-Mysql-Simple-Login-Web-application.git /tmp/project
